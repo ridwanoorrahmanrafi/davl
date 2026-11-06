@@ -1,0 +1,90 @@
+{
+  "image_id": "color_chart_cvd_confusion",
+  "source_filename": "color_chart_cvd_confusion.png",
+  "source_type": "synthetic_cvd_confusion_pairs",
+  "dimensions": {
+    "width": 384,
+    "height": 256
+  },
+  "original_sha256": "38eaaa6e69d4b2558bea4324edeb82064f601a50c697e86d2e899320780d404f",
+  "conditions": {
+    "protanopia": {
+      "condition_id": 0,
+      "condition_name": "Protanopia",
+      "filename": "color_chart_cvd_confusion_protanopia.png",
+      "relative_path": "reference_outputs/protanopia/color_chart_cvd_confusion_protanopia.png",
+      "dimensions": {
+        "width": 384,
+        "height": 256
+      },
+      "sha256": "1ae958a358c0c8387f5ecfff0c30a3f2be8494048d0e1093fb60c3036c473fa6",
+      "file_size_bytes": 76359,
+      "inference_time_ms": 513.17,
+      "reproducible_max_diff": 0,
+      "metrics_vs_target": null,
+      "delta_vs_original": {
+        "mean_abs_residual": 0.11503781378269196,
+        "max_abs_residual": 0.47058820724487305,
+        "channel_shift": {
+          "r": 0.03026634268462658,
+          "g": 0.022320156916975975,
+          "b": -0.015294733457267284
+        },
+        "ciede2000_vs_orig": 16.559648513793945,
+        "modified_pixel_ratio": 0.9798312717013888
+      }
+    },
+    "deuteranopia": {
+      "condition_id": 1,
+      "condition_name": "Deuteranopia",
+      "filename": "color_chart_cvd_confusion_deuteranopia.png",
+      "relative_path": "reference_outputs/deuteranopia/color_chart_cvd_confusion_deuteranopia.png",
+      "dimensions": {
+        "width": 384,
+        "height": 256
+      },
+      "sha256": "7e4c172574580865abd8cf2d62f4d5df1c8b220366be43ea9782c49734d06fd1",
+      "file_size_bytes": 68906,
+      "inference_time_ms": 570.34,
+      "reproducible_max_diff": 0,
+      "metrics_vs_target": null,
+      "delta_vs_original": {
+        "mean_abs_residual": 0.09774325788021088,
+        "max_abs_residual": 0.43921568989753723,
+        "channel_shift": {
+          "r": -0.029001593589782715,
+          "g": 0.05922504886984825,
+          "b": 0.01061198115348816
+        },
+        "ciede2000_vs_orig": 15.116775512695312,
+        "modified_pixel_ratio": 0.9825575086805556
+      }
+    },
+    "tritanopia": {
+      "condition_id": 2,
+      "condition_name": "Tritanopia",
+      "filename": "color_chart_cvd_confusion_tritanopia.png",
+      "relative_path": "reference_outputs/tritanopia/color_chart_cvd_confusion_tritanopia.png",
+      "dimensions": {
+        "width": 384,
+        "height": 256
+      },
+      "sha256": "52eed0726d6410f8ed41f1f39f4f644724a2df167890f301c6e7f6c70e901088",
+      "file_size_bytes": 72637,
+      "inference_time_ms": 486.69,
+      "reproducible_max_diff": 0,
+      "metrics_vs_target": null,
+      "delta_vs_original": {
+        "mean_abs_residual": 0.07744871079921722,
+        "max_abs_residual": 0.4901961088180542,
+        "channel_shift": {
+          "r": 0.008927451446652412,
+          "g": 0.02444944716989994,
+          "b": 0.04432210326194763
+        },
+        "ciede2000_vs_orig": 12.824429512023926,
+        "modified_pixel_ratio": 0.9798855251736112
+      }
+    }
+  }
+}

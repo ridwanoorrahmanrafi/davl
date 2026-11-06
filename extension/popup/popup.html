@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized CVD Assistant</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="title-area">
+        <h1>CVD Assistant</h1>
+        <span class="version-tag">Restormer RDB</span>
+      </div>
+      <div class="toggle-wrapper">
+        <label class="switch" for="enableToggle">
+          <input type="checkbox" id="enableToggle">
+          <span class="slider round"></span>
+        </label>
+        <span id="toggleStatusLabel" class="status-label">OFF</span>
+      </div>
+    </header>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab-btn active" id="tabDashboard" role="tab">Personalization</button>
+      <button class="tab-btn" id="tabDiagnosis" role="tab">Ishihara Test</button>
+    </nav>
+
+    <!-- ======================================================
+         PERSONALIZATION / DASHBOARD VIEW
+    ====================================================== -->
+    <main id="viewDashboard" class="view active-view">
+
+      <!-- Auto-applied notification banner -->
+      <div id="autoAppliedBanner" class="auto-banner hidden">
+        <div class="auto-banner-header">
+          <span class="auto-banner-badge">&#10003; Auto-Selected From Test</span>
+          <button id="dismissAutoBanner" class="banner-close" aria-label="Dismiss">&times;</button>
+        </div>
+        <p id="autoBannerDesc" class="auto-banner-text">Condition automatically set from your Ishihara test.</p>
+      </div>
+
+      <section class="section" id="profileSection">
+        <label for="conditionSelect" class="section-title">Color Vision Profile</label>
+        <select id="conditionSelect" class="select-box">
+          <option value="0">Protanopia (Red-weak)</option>
+          <option value="1" selected>Deuteranopia (Green-weak)</option>
+          <option value="2">Tritanopia (Blue-weak)</option>
+        </select>
+        <div id="detectedBadge" class="detected-badge hidden">Estimated from Ishihara test</div>
+      </section>
+
+      <section class="section">
+        <div class="slider-header">
+          <label for="severitySlider" class="section-title">Personalization Severity</label>
+          <span id="severityValue" class="slider-val">85%</span>
+        </div>
+        <input type="range" id="severitySlider" min="0" max="100" value="85" class="range-slider">
+        <div class="slider-labels">
+          <span>0% (Original)</span>
+          <span>50%</span>
+          <span>100% (Full)</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <label class="section-title">Recoloring Scope</label>
+        <div class="scope-group">
+          <label class="scope-card" id="scopeCardImages">
+            <input type="radio" name="recolorScope" value="images_only" id="scopeImagesOnly" checked>
+            <div class="scope-text">
+              <span class="scope-title">Photos Only (Neural Restormer)</span>
+              <span class="scope-desc">Exact pixelwise deep learning recoloring</span>
+            </div>
+          </label>
+          <label class="scope-card" id="scopeCardFull">
+            <input type="radio" name="recolorScope" value="full_page" id="scopeFullPage">
+            <div class="scope-text">
+              <span class="scope-title">Full Website (Affine Filter)</span>
+              <span class="scope-desc">Recolors background, text, UI elements &amp; palettes</span>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <!-- SECURITY & PRIVACY CARD -->
+      <section class="section security-section">
+        <div class="security-card">
+          <div class="security-header">
+            <span class="security-icon">&#128274;</span>
+            <span class="security-title">Screen Privacy &amp; Hashing</span>
+          </div>
+          <p class="security-desc">
+            Your screen is never recorded or viewed directly. All visual data is hashed with SHA-256 in ephemeral memory.
+          </p>
+          <div id="sensitivePageNotice" class="sensitive-warning-box hidden">
+            <span class="sensitive-warning-icon">&#9888;&#65039;</span>
+            <div class="sensitive-warning-text">
+              <strong>Sensitive Page Detected</strong>
+              <p>Login, sign-up, or transaction active. We recommend turning off the extension while entering credentials.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section api-status-section">
+        <div class="api-status-row">
+          <span class="indicator" id="apiIndicator"></span>
+          <span id="apiStatusText">Checking FastAPI backend...</span>
+        </div>
+        <div class="btn-group">
+          <button id="applyNowBtn" class="primary-btn">Save &amp; Apply to Page</button>
+          <button id="resetProfileBtn" class="secondary-btn">Reset Defaults</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======================================================
+         ISHIHARA TEST VIEW
+    ====================================================== -->
+    <main id="viewDiagnosis" class="view">
+
+      <!-- First-time onboarding banner -->
+      <div id="firstTimeWelcomeBanner" class="first-time-banner hidden">
+        <div class="first-time-header">
+          <span class="first-time-badge">&#128075; First-Time Setup</span>
+          <span class="first-time-tag">Calibration</span>
+        </div>
+        <p class="first-time-text">Welcome! Take this quick 5-plate Ishihara test to automatically detect your color blindness type and calibrate your personalization profile.</p>
+      </div>
+
+      <!-- ── INTRO CARD ── -->
+      <div class="test-intro-card" id="testIntroArea">
+        <div class="intro-icon-row">
+          <div class="intro-eye-orb">&#128065;&#65039;</div>
+          <div class="intro-header-text">
+            <h2 class="intro-title">Ishihara Color Vision Test</h2>
+            <p class="intro-subtitle">Powered by your trained Restormer_RDB neural model</p>
+          </div>
+        </div>
+
+        <div class="dynamic-badge-row">
+          <span class="dynamic-badge">&#10024; Dynamic Engine &middot; Randomized Numbers &amp; Dot Patterns</span>
+        </div>
+
+        <!-- Mode selector pills -->
+        <div class="mode-toggle-group">
+          <button type="button" class="mode-pill active" id="btnModeQuick">5 Plates (Quick)</button>
+          <button type="button" class="mode-pill" id="btnModeComp">10 Plates (Thorough)</button>
+          <button type="button" class="mode-pill mode-shuffle" id="btnShuffleIntro" title="Regenerate dynamic numbers">&#127922; Re-roll Numbers</button>
+        </div>
+
+        <!-- Live mini-canvas previews rendered by JS -->
+        <div class="intro-plates-row" id="introPlatesPreview"></div>
+
+        <div class="intro-stats-row">
+          <div class="intro-stat">
+            <span id="introStatPlates" class="intro-stat-num">5</span>
+            <span class="intro-stat-lbl">Plates</span>
+          </div>
+          <div class="intro-stat-div"></div>
+          <div class="intro-stat">
+            <span id="introStatDuration" class="intro-stat-num">~60s</span>
+            <span class="intro-stat-lbl">Duration</span>
+          </div>
+          <div class="intro-stat-div"></div>
+          <div class="intro-stat">
+            <span class="intro-stat-num">4</span>
+            <span class="intro-stat-lbl">CVD Types</span>
+          </div>
+          <div class="intro-stat-div"></div>
+          <div class="intro-stat">
+            <span class="intro-stat-num">12s</span>
+            <span class="intro-stat-lbl">Per Plate</span>
+          </div>
+        </div>
+
+        <div class="intro-type-tags">
+          <span class="type-tag type-tag-normal">Normal</span>
+          <span class="type-tag type-tag-protan">Protanopia</span>
+          <span class="type-tag type-tag-deutan">Deuteranopia</span>
+          <span class="type-tag type-tag-tritan">Tritanopia</span>
+        </div>
+
+        <p class="intro-desc">
+          Look at each plate and select the number you see. Results are automatically applied to your color correction profile using your trained neural model.
+        </p>
+
+        <button id="startTestBtn" class="start-test-btn-big">
+          <span class="start-btn-icon">&#9654;</span> Start Ishihara Test
+        </button>
+
+        <p class="intro-disclaimer">Non-clinical screening tool &middot; Not a medical diagnosis</p>
+      </div>
+
+      <!-- ── ACTIVE TEST CONTAINER ── -->
+      <div id="testContainer" class="hidden">
+
+        <!-- Header bar -->
+        <div class="test-top-bar">
+          <div class="test-header-left">
+            <span id="plateNumberBadge" class="plate-number-badge">1</span>
+            <div class="test-title-col">
+              <span class="test-sub-label">Color Vision Test</span>
+              <span id="plateQuestion" class="plate-question-text">Plate 1 of 5</span>
+            </div>
+          </div>
+          <div class="test-timer-pill" id="testTimerPill">
+            <span class="timer-icon">&#9201;&#65039;</span>
+            <span id="testTimerSeconds" class="timer-seconds">12</span><span class="timer-unit">s</span>
+          </div>
+        </div>
+
+        <!-- Dot step tracker (dynamically populated by JS) -->
+        <div class="plate-dot-track" id="plateDotProgress"></div>
+
+        <!-- Progress bar -->
+        <div class="progress-wrapper">
+          <div class="progress-labels">
+            <span class="progress-txt">Progress</span>
+            <span id="progressPercentage" class="progress-pct">0%</span>
+          </div>
+          <div class="test-progress-bar">
+            <div id="testProgress" class="progress-fill"></div>
+          </div>
+        </div>
+
+        <!-- Plate stage -->
+        <div id="plateWrapper" class="plate-box">
+          <div id="platePrompt" class="plate-prompt">What number do you see in the circle?</div>
+
+          <div id="plateVisual" class="plate-visual">
+            <div class="plate-outer-ring">
+              <div id="plateGraphic" class="plate-graphic">
+                <canvas id="plateCanvas" width="240" height="240"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="plate-hint">Look carefully at the pattern of colored dots.</div>
+
+          <!-- 2×2 numeric options -->
+          <div id="plateOptions" class="options-grid"></div>
+
+          <!-- Action buttons -->
+          <div class="action-buttons-row">
+            <button type="button" id="btnCannotSee" class="btn-cannot-see">
+              <span>&#128683; I cannot see any number</span>
+            </button>
+            <button type="button" id="btnSkip" class="btn-skip">
+              <span>Skip &#10148;</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Keyboard shortcut hint -->
+        <div class="keyboard-hint">
+          Keys: <kbd>1</kbd>–<kbd>4</kbd> select &nbsp;&middot;&nbsp; <kbd>C</kbd> can't see &nbsp;&middot;&nbsp; <kbd>S</kbd> skip
+        </div>
+      </div>
+
+      <!-- ── RESULT PANEL ── -->
+      <div id="testResultWrapper" class="result-box hidden">
+
+        <div class="result-badge-card" id="resultBadgeCard">
+          <span class="result-subtitle">DIAGNOSTIC RESULT</span>
+          <h2 id="diagnosisTitle" class="diagnosis-condition">Evaluating...</h2>
+          <div id="diagnosisTag" class="diagnosis-tag">Analyzing</div>
+        </div>
+
+        <div class="result-metrics">
+          <div class="metric-item">
+            <span class="metric-label">Accuracy</span>
+            <span id="diagnosisAccuracy" class="metric-value">100%</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-label">Correct</span>
+            <span id="diagnosisCorrect" class="metric-value">5 / 5</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-label">Severity</span>
+            <span id="diagnosisSeverity" class="metric-value">--%</span>
+          </div>
+        </div>
+
+        <p id="diagnosisDetail" class="diagnosis-detail"></p>
+
+        <!-- Itemized breakdown -->
+        <div class="breakdown-section">
+          <div class="breakdown-header">Itemized Plate Breakdown</div>
+          <div id="breakdownList" class="breakdown-list"></div>
+        </div>
+
+        <!-- Auto-apply status -->
+        <div id="autoApplyStatusBox" class="auto-apply-box">
+          <span class="auto-apply-icon">&#10003;</span>
+          <span id="autoApplyStatusText">Automatically applied to Personalization! Switching tabs in 2s...</span>
+        </div>
+
+        <div class="btn-group">
+          <button id="goToPersonalizationBtn" class="primary-btn">View in Personalization</button>
+          <button id="retryTestBtn" class="secondary-btn">&#127922; Retake with New Numbers</button>
+        </div>
+      </div>
+
+      <!-- ── PLATES REFERENCE GALLERY ── -->
+      <div class="plates-catalog-section" id="popupPlatesSection">
+        <details class="plates-details" id="popupPlatesDetails">
+          <summary class="plates-summary">
+            <span id="gallerySummaryTitle">&#128444;&#65039; Browse Active Ishihara Test Plates</span>
+            <span class="plates-summary-arrow">&#9660;</span>
+          </summary>
+          <button type="button" id="btnShuffleGallery" class="gallery-shuffle-btn">&#127922; Generate Fresh Dynamic Plates</button>
+          <div id="popupPlatesList" class="popup-plates-list"></div>
+        </details>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      <span>Restormer_RDB inference via local FastAPI server (localhost:8000). Non-destructive per-image recoloring.</span>
+    </footer>
+  </div>
+
+  <script src="plates_data.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

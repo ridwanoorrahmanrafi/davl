@@ -1,0 +1,349 @@
+{
+  "audit_version": "1.0.0",
+  "checkpoint_evaluated": "best_restormer.pt",
+  "checkpoint_sha256": "7f5ad90b372028d17b09fcaaa97b039d824e13d434a09814448af4bca6383eed",
+  "total_combinations_tested": 12,
+  "mae_threshold_required": 0.0001,
+  "all_tests_passed": true,
+  "png_transport_zero_diff_count": 12,
+  "webp_lossless_zero_diff_count": 12,
+  "zero_channel_swap_verified": true,
+  "detailed_results": [
+    {
+      "image_id": "flower_0001",
+      "dimensions": [
+        190,
+        188
+      ],
+      "condition_id": 0,
+      "condition_name": "Protanopia",
+      "png_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true,
+        "heatmap_file": "flower_0001_protanopia_png_diff_heatmap.png"
+      },
+      "webp_lossless_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true
+      }
+    },
+    {
+      "image_id": "flower_0001",
+      "dimensions": [
+        190,
+        188
+      ],
+      "condition_id": 1,
+      "condition_name": "Deuteranopia",
+      "png_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true,
+        "heatmap_file": "flower_0001_deuteranopia_png_diff_heatmap.png"
+      },
+      "webp_lossless_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true
+      }
+    },
+    {
+      "image_id": "flower_0001",
+      "dimensions": [
+        190,
+        188
+      ],
+      "condition_id": 2,
+      "condition_name": "Tritanopia",
+      "png_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true,
+        "heatmap_file": "flower_0001_tritanopia_png_diff_heatmap.png"
+      },
+      "webp_lossless_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true
+      }
+    },
+    {
+      "image_id": "color_chart_macbeth",
+      "dimensions": [
+        342,
+        230
+      ],
+      "condition_id": 0,
+      "condition_name": "Protanopia",
+      "png_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true,
+        "heatmap_file": "color_chart_macbeth_protanopia_png_diff_heatmap.png"
+      },
+      "webp_lossless_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true
+      }
+    },
+    {
+      "image_id": "color_chart_macbeth",
+      "dimensions": [
+        342,
+        230
+      ],
+      "condition_id": 1,
+      "condition_name": "Deuteranopia",
+      "png_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true,
+        "heatmap_file": "color_chart_macbeth_deuteranopia_png_diff_heatmap.png"
+      },
+      "webp_lossless_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true
+      }
+    },
+    {
+      "image_id": "color_chart_macbeth",
+      "dimensions": [
+        342,
+        230
+      ],
+      "condition_id": 2,
+      "condition_name": "Tritanopia",
+      "png_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true,
+        "heatmap_file": "color_chart_macbeth_tritanopia_png_diff_heatmap.png"
+      },
+      "webp_lossless_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true
+      }
+    },
+    {
+      "image_id": "color_chart_gradients",
+      "dimensions": [
+        384,
+        256
+      ],
+      "condition_id": 0,
+      "condition_name": "Protanopia",
+      "png_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true,
+        "heatmap_file": "color_chart_gradients_protanopia_png_diff_heatmap.png"
+      },
+      "webp_lossless_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true
+      }
+    },
+    {
+      "image_id": "color_chart_gradients",
+      "dimensions": [
+        384,
+        256
+      ],
+      "condition_id": 1,
+      "condition_name": "Deuteranopia",
+      "png_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true,
+        "heatmap_file": "color_chart_gradients_deuteranopia_png_diff_heatmap.png"
+      },
+      "webp_lossless_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true
+      }
+    },
+    {
+      "image_id": "color_chart_gradients",
+      "dimensions": [
+        384,
+        256
+      ],
+      "condition_id": 2,
+      "condition_name": "Tritanopia",
+      "png_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true,
+        "heatmap_file": "color_chart_gradients_tritanopia_png_diff_heatmap.png"
+      },
+      "webp_lossless_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true
+      }
+    },
+    {
+      "image_id": "color_chart_cvd_confusion",
+      "dimensions": [
+        384,
+        256
+      ],
+      "condition_id": 0,
+      "condition_name": "Protanopia",
+      "png_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true,
+        "heatmap_file": "color_chart_cvd_confusion_protanopia_png_diff_heatmap.png"
+      },
+      "webp_lossless_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true
+      }
+    },
+    {
+      "image_id": "color_chart_cvd_confusion",
+      "dimensions": [
+        384,
+        256
+      ],
+      "condition_id": 1,
+      "condition_name": "Deuteranopia",
+      "png_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true,
+        "heatmap_file": "color_chart_cvd_confusion_deuteranopia_png_diff_heatmap.png"
+      },
+      "webp_lossless_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true
+      }
+    },
+    {
+      "image_id": "color_chart_cvd_confusion",
+      "dimensions": [
+        384,
+        256
+      ],
+      "condition_id": 2,
+      "condition_name": "Tritanopia",
+      "png_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true,
+        "heatmap_file": "color_chart_cvd_confusion_tritanopia_png_diff_heatmap.png"
+      },
+      "webp_lossless_transport": {
+        "max_pixel_diff": 0,
+        "mae_red": 0.0,
+        "mae_green": 0.0,
+        "mae_blue": 0.0,
+        "overall_mae": 0.0,
+        "zero_channel_swap": true,
+        "passed": true
+      }
+    }
+  ]
+}

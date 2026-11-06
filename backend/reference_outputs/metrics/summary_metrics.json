@@ -1,0 +1,42 @@
+{
+  "total_source_images": 11,
+  "natural_test_images": 8,
+  "synthetic_calibration_charts": 3,
+  "total_reference_outputs_generated": 33,
+  "reproducibility_verified": true,
+  "max_reproducibility_pixel_difference": 0,
+  "elapsed_seconds": 0.95,
+  "natural_test_aggregate_metrics": {
+    "Overall": {
+      "pairs_evaluated": 24,
+      "mean_psnr_db": 19.9208,
+      "mean_ssim": 0.7692,
+      "mean_mae": 0.0753,
+      "mean_ciede2000": 10.682
+    },
+    "Protanopia": {
+      "condition_id": 0,
+      "pairs_evaluated": 8,
+      "mean_psnr_db": 15.2733,
+      "mean_ssim": 0.5804,
+      "mean_mae": 0.1245,
+      "mean_ciede2000": 17.2145
+    },
+    "Deuteranopia": {
+      "condition_id": 1,
+      "pairs_evaluated": 8,
+      "mean_psnr_db": 22.9227,
+      "mean_ssim": 0.8627,
+      "mean_mae": 0.0507,
+      "mean_ciede2000": 7.5439
+    },
+    "Tritanopia": {
+      "condition_id": 2,
+      "pairs_evaluated": 8,
+      "mean_psnr_db": 21.5664,
+      "mean_ssim": 0.8646,
+      "mean_mae": 0.0506,
+      "mean_ciede2000": 7.2875
+    }
+  }
+}

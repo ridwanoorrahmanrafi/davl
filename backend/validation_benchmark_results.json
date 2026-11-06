@@ -1,0 +1,206 @@
+[
+  {
+    "checkpoint_file": "Restormer_RDB_epoch_001.pt",
+    "checkpoint_path": "D:\\personalized_colore\\backend\\weights\\checkpoints\\Restormer_RDB_epoch_001.pt",
+    "architecture": "Restormer_RDB",
+    "epoch": 1,
+    "stored_val_loss": 0.17227680534509418,
+    "file_size_bytes": 5631535,
+    "file_size_mb": 5.37,
+    "parameter_count": 461694,
+    "latency_ms_per_image": 153.4803894060262,
+    "Overall": {
+      "psnr": 17.57509529393208,
+      "ssim": 0.6911331433658452,
+      "ms_ssim": 0.757091380328479,
+      "mae": 0.09707759976271511,
+      "mse": 0.025510812786802436,
+      "lpips": 0.2718225444741643,
+      "ciede2000": 15.297808455558402,
+      "count": 387
+    },
+    "Protanopia": {
+      "psnr": 13.995829725555666,
+      "ssim": 0.5186297593190689,
+      "ms_ssim": 0.626102841293165,
+      "mae": 0.14730259397810744,
+      "mse": 0.04418259401365306,
+      "lpips": 0.4009809082792711,
+      "ciede2000": 21.837138390356255,
+      "count": 129
+    },
+    "Deuteranopia": {
+      "psnr": 20.77368771992465,
+      "ssim": 0.7886395237242528,
+      "ms_ssim": 0.8579434424407723,
+      "mae": 0.06555061804693799,
+      "mse": 0.010917654395457213,
+      "lpips": 0.19338758925134822,
+      "ciede2000": 11.035862246225047,
+      "count": 129
+    },
+    "Tritanopia": {
+      "psnr": 17.955768436315918,
+      "ssim": 0.7661301470542139,
+      "ms_ssim": 0.7872278572515,
+      "mae": 0.0783795872630999,
+      "mse": 0.02143218995129704,
+      "lpips": 0.22109913589187372,
+      "ciede2000": 13.020424730093904,
+      "count": 129
+    }
+  },
+  {
+    "checkpoint_file": "Restormer_RDB_epoch_002.pt",
+    "checkpoint_path": "D:\\personalized_colore\\backend\\weights\\checkpoints\\Restormer_RDB_epoch_002.pt",
+    "architecture": "Restormer_RDB",
+    "epoch": 2,
+    "stored_val_loss": 0.15060362516293538,
+    "file_size_bytes": 5631535,
+    "file_size_mb": 5.37,
+    "parameter_count": 461694,
+    "latency_ms_per_image": 138.8033281646859,
+    "Overall": {
+      "psnr": 18.644160244983485,
+      "ssim": 0.7120305092220774,
+      "ms_ssim": 0.7887728090665137,
+      "mae": 0.08531452121949473,
+      "mse": 0.02173966416386401,
+      "lpips": 0.2301074031605662,
+      "ciede2000": 13.034297590107881,
+      "count": 387
+    },
+    "Protanopia": {
+      "psnr": 14.407194201769306,
+      "ssim": 0.5356008841316829,
+      "ms_ssim": 0.6457881427319475,
+      "mae": 0.13681806649926098,
+      "mse": 0.04104803716980441,
+      "lpips": 0.37384338157121527,
+      "ciede2000": 20.226226570070253,
+      "count": 129
+    },
+    "Deuteranopia": {
+      "psnr": 21.24007689645726,
+      "ssim": 0.8058447763901349,
+      "ms_ssim": 0.8706898328869842,
+      "mae": 0.06030085851806541,
+      "mse": 0.010407193888758505,
+      "lpips": 0.16086777237554392,
+      "ciede2000": 9.967159995737003,
+      "count": 129
+    },
+    "Tritanopia": {
+      "psnr": 20.285209636723888,
+      "ssim": 0.7946458671444147,
+      "ms_ssim": 0.8498404515806095,
+      "mae": 0.05882463864115781,
+      "mse": 0.01376376143302913,
+      "lpips": 0.15561105553493942,
+      "ciede2000": 8.909506204516388,
+      "count": 129
+    }
+  },
+  {
+    "checkpoint_file": "Restormer_RDB_epoch_003.pt",
+    "checkpoint_path": "D:\\personalized_colore\\backend\\weights\\checkpoints\\Restormer_RDB_epoch_003.pt",
+    "architecture": "Restormer_RDB",
+    "epoch": 3,
+    "stored_val_loss": 0.13148849116739378,
+    "file_size_bytes": 5631535,
+    "file_size_mb": 5.37,
+    "parameter_count": 461694,
+    "latency_ms_per_image": 103.8272142123301,
+    "Overall": {
+      "psnr": 19.49070389104031,
+      "ssim": 0.7249617508831566,
+      "ms_ssim": 0.8185677004337927,
+      "mae": 0.07552398322992393,
+      "mse": 0.017889516495645904,
+      "lpips": 0.18497138897808948,
+      "ciede2000": 11.640021527460378,
+      "count": 387
+    },
+    "Protanopia": {
+      "psnr": 15.509744449039864,
+      "ssim": 0.5554339779439823,
+      "ms_ssim": 0.6968916815149692,
+      "mae": 0.11705367368205573,
+      "mse": 0.0329024740278201,
+      "lpips": 0.2910704923461574,
+      "ciede2000": 17.63990592956543,
+      "count": 129
+    },
+    "Deuteranopia": {
+      "psnr": 22.415979360744586,
+      "ssim": 0.8249121927475744,
+      "ms_ssim": 0.8920136389806289,
+      "mae": 0.05131768950716008,
+      "mse": 0.00827865383647339,
+      "lpips": 0.12954576078138147,
+      "ciede2000": 8.43385425648948,
+      "count": 129
+    },
+    "Tritanopia": {
+      "psnr": 20.546387863336495,
+      "ssim": 0.7945390819579132,
+      "ms_ssim": 0.86679778080578,
+      "mae": 0.05820058650055597,
+      "mse": 0.012487421622644214,
+      "lpips": 0.13429791380672954,
+      "ciede2000": 8.846304396326227,
+      "count": 129
+    }
+  },
+  {
+    "checkpoint_file": "best_restormer.pt",
+    "checkpoint_path": "D:\\personalized_colore\\backend\\weights\\best_restormer.pt",
+    "architecture": "Restormer_RDB",
+    "epoch": 3,
+    "stored_val_loss": 0.13148849116739378,
+    "file_size_bytes": 5628897,
+    "file_size_mb": 5.37,
+    "parameter_count": 461694,
+    "latency_ms_per_image": 109.07165865634643,
+    "Overall": {
+      "psnr": 19.49070389104031,
+      "ssim": 0.7249617508831566,
+      "ms_ssim": 0.8185677004337927,
+      "mae": 0.07552398322992393,
+      "mse": 0.017889516495645904,
+      "lpips": 0.18497138897808948,
+      "ciede2000": 11.640021527460378,
+      "count": 387
+    },
+    "Protanopia": {
+      "psnr": 15.509744449039864,
+      "ssim": 0.5554339779439823,
+      "ms_ssim": 0.6968916815149692,
+      "mae": 0.11705367368205573,
+      "mse": 0.0329024740278201,
+      "lpips": 0.2910704923461574,
+      "ciede2000": 17.63990592956543,
+      "count": 129
+    },
+    "Deuteranopia": {
+      "psnr": 22.415979360744586,
+      "ssim": 0.8249121927475744,
+      "ms_ssim": 0.8920136389806289,
+      "mae": 0.05131768950716008,
+      "mse": 0.00827865383647339,
+      "lpips": 0.12954576078138147,
+      "ciede2000": 8.43385425648948,
+      "count": 129
+    },
+    "Tritanopia": {
+      "psnr": 20.546387863336495,
+      "ssim": 0.7945390819579132,
+      "ms_ssim": 0.86679778080578,
+      "mae": 0.05820058650055597,
+      "mse": 0.012487421622644214,
+      "lpips": 0.13429791380672954,
+      "ciede2000": 8.846304396326227,
+      "count": 129
+    }
+  }
+]

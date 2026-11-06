@@ -1,0 +1,115 @@
+{
+  "architecture": "Restormer_RDB",
+  "checkpoint_filename": "best_restormer.pt",
+  "checkpoint_path": "backend/weights/best_restormer.pt",
+  "checkpoint_sha256": "7f5ad90b372028d17b09fcaaa97b039d824e13d434a09814448af4bca6383eed",
+  "backup_checkpoint_path": "backend/weights/checkpoints/Restormer_RDB_epoch_003.pt",
+  "backup_checkpoint_sha256": "178f3e73ed36eadfd3906830aef8e4f2929c6befdecaf4f65ec1d174511fff70",
+  "model_version": "1.0.0",
+  "training_epoch": 3,
+  "parameter_count": 461694,
+  "file_size_bytes": 5628897,
+  "condition_mapping": {
+    "Protanopia": 0,
+    "Deuteranopia": 1,
+    "Tritanopia": 2
+  },
+  "preprocessing_config": {
+    "color_space": "sRGB",
+    "normalization": "float32 in range [0.0, 1.0]",
+    "exif_transpose": true,
+    "spatial_padding": "replicate padding to multiples of 8 (H_pad = (8 - H%8)%8, W_pad = (8 - W%8)%8)",
+    "max_dimension": 2048,
+    "conditioning": "one-hot spatial expansion (B, 3, H, W) concatenated to (B, 6, H, W)"
+  },
+  "postprocessing_config": {
+    "residual_formulation": "0.5 * torch.tanh(Output_Projection)",
+    "unpadding": "exact slice [0, :, :orig_h, :orig_w]",
+    "clamping": "torch.clamp(image + residual, 0.0, 1.0)",
+    "quantization": "(tensor.permute(1, 2, 0).numpy() * 255.0).round().astype(np.uint8)",
+    "personalization_blending": "severity * recolored + (1.0 - severity) * original",
+    "transport_encoding": "lossless PNG (optimize=True) for reference testing"
+  },
+  "selected_validation_metrics": {
+    "Overall": {
+      "psnr_db": 19.4907,
+      "ssim": 0.7250,
+      "ms_ssim": 0.8186,
+      "mae": 0.0755,
+      "lpips": 0.1850,
+      "ciede2000": 11.6400,
+      "latency_ms": 109.1
+    },
+    "Protanopia": {
+      "condition_id": 0,
+      "psnr_db": 15.5097,
+      "ssim": 0.5554,
+      "ms_ssim": 0.6969,
+      "mae": 0.1171,
+      "lpips": 0.2911,
+      "ciede2000": 17.6399
+    },
+    "Deuteranopia": {
+      "condition_id": 1,
+      "psnr_db": 22.4160,
+      "ssim": 0.8249,
+      "ms_ssim": 0.8920,
+      "mae": 0.0513,
+      "lpips": 0.1295,
+      "ciede2000": 8.4339
+    },
+    "Tritanopia": {
+      "condition_id": 2,
+      "psnr_db": 20.5464,
+      "ssim": 0.7945,
+      "ms_ssim": 0.8668,
+      "mae": 0.0582,
+      "lpips": 0.1343,
+      "ciede2000": 8.8463
+    }
+  },
+  "final_held_out_test_metrics": {
+    "Overall": {
+      "identities_count": 128,
+      "pairs_count": 384,
+      "psnr_db": 19.6924,
+      "ssim": 0.7379,
+      "ms_ssim": 0.8308,
+      "mae": 0.0727,
+      "lpips": 0.1789,
+      "ciede2000": 11.2312,
+      "mean_latency_ms": 105.84
+    },
+    "Protanopia": {
+      "condition_id": 0,
+      "pairs_count": 128,
+      "psnr_db": 15.8368,
+      "ssim": 0.5725,
+      "ms_ssim": 0.7207,
+      "mae": 0.1121,
+      "lpips": 0.2793,
+      "ciede2000": 17.0782
+    },
+    "Deuteranopia": {
+      "condition_id": 1,
+      "pairs_count": 128,
+      "psnr_db": 22.6602,
+      "ssim": 0.8343,
+      "ms_ssim": 0.8997,
+      "mae": 0.0501,
+      "lpips": 0.1252,
+      "ciede2000": 8.2541
+    },
+    "Tritanopia": {
+      "condition_id": 2,
+      "pairs_count": 128,
+      "psnr_db": 20.5804,
+      "ssim": 0.8068,
+      "ms_ssim": 0.8722,
+      "mae": 0.0557,
+      "lpips": 0.1322,
+      "ciede2000": 8.3614
+    }
+  }
+}
+

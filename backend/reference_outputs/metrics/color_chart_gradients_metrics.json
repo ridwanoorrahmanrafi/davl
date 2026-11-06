@@ -1,0 +1,90 @@
+{
+  "image_id": "color_chart_gradients",
+  "source_filename": "color_chart_gradients.png",
+  "source_type": "synthetic_continuous_gradients",
+  "dimensions": {
+    "width": 384,
+    "height": 256
+  },
+  "original_sha256": "7286ef3542cae4020e3965ea6f6087473b74b908988b5349480f2bdf9abeb895",
+  "conditions": {
+    "protanopia": {
+      "condition_id": 0,
+      "condition_name": "Protanopia",
+      "filename": "color_chart_gradients_protanopia.png",
+      "relative_path": "reference_outputs/protanopia/color_chart_gradients_protanopia.png",
+      "dimensions": {
+        "width": 384,
+        "height": 256
+      },
+      "sha256": "6efe697bc65de273435e3ebcbfecba4ed5b8dd9aac412817df60b3e075170020",
+      "file_size_bytes": 101435,
+      "inference_time_ms": 543.26,
+      "reproducible_max_diff": 0,
+      "metrics_vs_target": null,
+      "delta_vs_original": {
+        "mean_abs_residual": 0.13017892837524414,
+        "max_abs_residual": 0.46666666865348816,
+        "channel_shift": {
+          "r": 0.01912877894937992,
+          "g": 0.02663000114262104,
+          "b": -0.015060161240398884
+        },
+        "ciede2000_vs_orig": 16.89554214477539,
+        "modified_pixel_ratio": 0.852752685546875
+      }
+    },
+    "deuteranopia": {
+      "condition_id": 1,
+      "condition_name": "Deuteranopia",
+      "filename": "color_chart_gradients_deuteranopia.png",
+      "relative_path": "reference_outputs/deuteranopia/color_chart_gradients_deuteranopia.png",
+      "dimensions": {
+        "width": 384,
+        "height": 256
+      },
+      "sha256": "41160ea8a10e0f6c39b399483573244f18584bcd5c6db9afa58643ca9cf2e761",
+      "file_size_bytes": 95672,
+      "inference_time_ms": 629.64,
+      "reproducible_max_diff": 0,
+      "metrics_vs_target": null,
+      "delta_vs_original": {
+        "mean_abs_residual": 0.1267821490764618,
+        "max_abs_residual": 0.4627450704574585,
+        "channel_shift": {
+          "r": -0.02773648500442505,
+          "g": 0.07969703525304794,
+          "b": 0.0030762951355427504
+        },
+        "ciede2000_vs_orig": 15.442852973937988,
+        "modified_pixel_ratio": 0.8938429090711806
+      }
+    },
+    "tritanopia": {
+      "condition_id": 2,
+      "condition_name": "Tritanopia",
+      "filename": "color_chart_gradients_tritanopia.png",
+      "relative_path": "reference_outputs/tritanopia/color_chart_gradients_tritanopia.png",
+      "dimensions": {
+        "width": 384,
+        "height": 256
+      },
+      "sha256": "6f11b0d938d96a92ba205f62ee2150dce73ddc2bb517a96f890c76375973995c",
+      "file_size_bytes": 101978,
+      "inference_time_ms": 516.91,
+      "reproducible_max_diff": 0,
+      "metrics_vs_target": null,
+      "delta_vs_original": {
+        "mean_abs_residual": 0.10778669267892838,
+        "max_abs_residual": 0.49803924560546875,
+        "channel_shift": {
+          "r": -0.016342302784323692,
+          "g": 0.04270039498806,
+          "b": 0.04797742888331413
+        },
+        "ciede2000_vs_orig": 11.68005657196045,
+        "modified_pixel_ratio": 0.8998345269097222
+      }
+    }
+  }
+}

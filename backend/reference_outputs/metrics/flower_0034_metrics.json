@@ -1,0 +1,108 @@
+{
+  "image_id": "flower_0034",
+  "source_filename": "flower_0034.jpg",
+  "source_type": "held_out_test_split",
+  "dimensions": {
+    "width": 561,
+    "height": 362
+  },
+  "original_sha256": "e0bbf235e33179562e7f097e579097e6b3cd019d0b0c8c6af3023fe9b55688c5",
+  "conditions": {
+    "protanopia": {
+      "condition_id": 0,
+      "condition_name": "Protanopia",
+      "filename": "flower_0034_protanopia.png",
+      "relative_path": "reference_outputs/protanopia/flower_0034_protanopia.png",
+      "dimensions": {
+        "width": 561,
+        "height": 362
+      },
+      "sha256": "f12ac4a718df4e1f9b82d593133cb380f5316cd27689e76edaea26262d598b7d",
+      "file_size_bytes": 436646,
+      "inference_time_ms": 1431.5,
+      "reproducible_max_diff": 0,
+      "metrics_vs_target": {
+        "psnr_db": 16.97703692223064,
+        "ssim": 0.6672472953796387,
+        "mae": 0.08688601106405258,
+        "mse": 0.02005840092897415,
+        "ciede2000": 12.750752449035645
+      },
+      "delta_vs_original": {
+        "mean_abs_residual": 0.11523022502660751,
+        "max_abs_residual": 0.4705882668495178,
+        "channel_shift": {
+          "r": 0.01390735525637865,
+          "g": 0.008284013718366623,
+          "b": 0.024950839579105377
+        },
+        "ciede2000_vs_orig": 21.921228408813477,
+        "modified_pixel_ratio": 0.9491305646651763
+      }
+    },
+    "deuteranopia": {
+      "condition_id": 1,
+      "condition_name": "Deuteranopia",
+      "filename": "flower_0034_deuteranopia.png",
+      "relative_path": "reference_outputs/deuteranopia/flower_0034_deuteranopia.png",
+      "dimensions": {
+        "width": 561,
+        "height": 362
+      },
+      "sha256": "f8fa1314bde0357870b212386e164025c2cf3cc9f591feb5d2e72c865fced8e1",
+      "file_size_bytes": 452018,
+      "inference_time_ms": 1312.88,
+      "reproducible_max_diff": 0,
+      "metrics_vs_target": {
+        "psnr_db": 25.65319214128577,
+        "ssim": 0.9187526702880859,
+        "mae": 0.03434005379676819,
+        "mse": 0.0027207008097320795,
+        "ciede2000": 6.279373645782471
+      },
+      "delta_vs_original": {
+        "mean_abs_residual": 0.08155614882707596,
+        "max_abs_residual": 0.4274509847164154,
+        "channel_shift": {
+          "r": -0.04980438947677612,
+          "g": 0.0637240931391716,
+          "b": 0.006800265517085791
+        },
+        "ciede2000_vs_orig": 17.203109741210938,
+        "modified_pixel_ratio": 0.9629525675999514
+      }
+    },
+    "tritanopia": {
+      "condition_id": 2,
+      "condition_name": "Tritanopia",
+      "filename": "flower_0034_tritanopia.png",
+      "relative_path": "reference_outputs/tritanopia/flower_0034_tritanopia.png",
+      "dimensions": {
+        "width": 561,
+        "height": 362
+      },
+      "sha256": "d905dec1b48b0a52548d10de6f78b2a4c4247135969c4c338079268c6e1be1c0",
+      "file_size_bytes": 457532,
+      "inference_time_ms": 1242.5,
+      "reproducible_max_diff": 0,
+      "metrics_vs_target": {
+        "psnr_db": 20.094632588704513,
+        "ssim": 0.8615511059761047,
+        "mae": 0.04836616665124893,
+        "mse": 0.0097844572737813,
+        "ciede2000": 7.710888862609863
+      },
+      "delta_vs_original": {
+        "mean_abs_residual": 0.07108789682388306,
+        "max_abs_residual": 0.49803924560546875,
+        "channel_shift": {
+          "r": -0.0038875043392181396,
+          "g": 0.03316504508256912,
+          "b": 0.02584865503013134
+        },
+        "ciede2000_vs_orig": 13.061017036437988,
+        "modified_pixel_ratio": 0.9657035089274283
+      }
+    }
+  }
+}
